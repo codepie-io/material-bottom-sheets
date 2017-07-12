@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Drawer | Material Design | CodeArtisan</title>
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Drawer | Material Design | CodeArtisan">
+    <meta name="theme-color" content="#4caf50">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Navigation Drawer">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#43a047">
+
+    <!-- Tile icon for Win8 -->
+    <meta name="msapplication-TileColor" content="#4caf50">
+    <meta name="msapplication-navbutton-color" content="#43a047">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Material+Icons' rel='stylesheet' type='text/css'>
+    <link href="css/app.css" rel="stylesheet">
+    <link href="css/bottom-sheets.css" rel="stylesheet">
+    <link href="css/docs.css" rel="stylesheet">
+    <link href="vendor/highlight/styles/vs.css" rel="stylesheet">
+</head>
+<body class="has-fixed-header">
+
+<header class="md-header md-header--primary is-fixed is-casting-shadow md-header--has-menu-button">
+    <a class="md-header__menu-button md-button--icon" href="javascript:;" data-toggle="drawer" data-target="#drawer-1">
+        <i class="material-icons">menu</i>
+    </a>
+    <div class="md-header__row">
+        <div class="hidden md-header__title"> Drawer </div>
+        <div class="md-layout-spacer"></div>
+    </div>
+</header>
+<button class="md-button md-button--primary layout-m-t-2 md-button--raised" data-toggle="bottom-sheet" data-target="#bsheet-1">
+    show sheets
+</button>
+<section class="md-bottom-sheet" data-touch="true" data-full-width="true" data-persistent="true" id="bsheet-1">
+    <div class="md-bottom-sheet__shadow"></div>
+    <div class="md-bottom-sheet__surface">
+        <div class="md-bottom-sheet-header md-bottom-sheet-header--grid">
+            Create
+        </div>
+        <div class="md-bottom-sheet-grid">
+            <div class="md-bottom-sheet-grid__row">
+                <div class="grid-item">
+                    <button class="md-button md-button--icon">
+                        <i class="material-icons">folder</i>
+                    </button>
+                    <div class="grid-item__label">Folder</div>
+                </div>
+                <div class="grid-item">
+                    <button class="md-button md-button--icon">
+                        <i class="material-icons">camera</i>
+                    </button>
+                    <div class="grid-item__label">Camera</div>
+                </div>
+                <div class="grid-item">
+                    <button class="md-button md-button--icon">
+                        <i class="material-icons">cloud_upload</i>
+                    </button>
+                    <div class="grid-item__label">upload</div>
+                </div>
+            </div>
+            <div class="md-bottom-sheet-grid__row">
+                <div class="grid-item">
+                    <button class="md-button md-button--icon">
+                        <i class="material-icons">folder</i>
+                    </button>
+                    <div class="grid-item__label">Folder</div>
+                </div>
+                <div class="grid-item">
+                    <button class="md-button md-button--icon">
+                        <i class="material-icons">camera</i>
+                    </button>
+                    <div class="grid-item__label">Camera</div>
+                </div>
+                <div class="grid-item">
+                    <button class="md-button md-button--icon">
+                        <i class="material-icons">cloud_upload</i>
+                    </button>
+                    <div class="grid-item__label">upload</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hidden md-list">
+            <div class="md-list__item">
+                <i class="md-list__item-icon material-icons">
+                    share
+                </i>
+                <span class="md-list__item-content">
+                    Share
+                </span>
+            </div>
+        </div>
+
+        <div class="hidden md-bottom-sheet-header">
+            Create
+        </div>
+        <div class="hidden md-bottom-sheet-navigation">
+            <button class="md-button md-bottom-sheet-navigation__item has-icon">
+                <i class="material-icons">share</i>
+                <span class="md-drawer-navigation__display-name">Share</span>
+            </button>
+            <button class="md-button md-bottom-sheet-navigation__item has-icon">
+                <i class="material-icons">cloud_upload</i>
+                <span class="md-drawer-navigation__display-name">Upload</span>
+            </button>
+            <div class="md-bottom-sheet-navigation__divider"></div>
+            <button class="md-button md-bottom-sheet-navigation__item has-icon">
+                <i class="material-icons">content_copy</i>
+                <span class="md-drawer-navigation__display-name">Copy</span>
+            </button>
+            <button class="md-button md-bottom-sheet-navigation__item has-icon">
+                <i class="material-icons">print</i>
+                <span class="md-drawer-navigation__display-name">Print this page</span>
+            </button>
+        </div>
+    </div>
+</section>
+<script src="js/jquery.js"></script>
+<script src="../resources/assets/js/bottom-sheets.js"></script>
+</body>
+</html>

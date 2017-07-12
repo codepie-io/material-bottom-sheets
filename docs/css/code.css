@@ -1,0 +1,133 @@
+code,pre,.pre-style {
+    background: #f7f7f7;
+    color: #37474f;
+    font: 400 100%/1 Roboto Mono,monospace;
+    padding: 1px 4px
+}
+
+.devsite-dark-code pre,.devsite-dark-code pre code,.devsite-dark-code .pre-style {
+    background: #212121;
+    color: #eceff1
+}
+
+code {
+    font: 500 90%/1 Roboto Mono,monospace;
+    word-break: break-word
+}
+
+table code,pre code,.pre-style code {
+    font-weight: 400;
+    word-break: normal
+}
+
+pre,.pre-style {
+    font: 14px/20px Roboto Mono,monospace;
+    margin: 16px 0;
+    overflow-x: auto;
+    padding: 8px;
+    position: relative
+}
+
+pre code,.pre-style code {
+    background: 0;
+    font-size: 14px;
+    padding: 0
+}
+
+b code,strong code {
+    font-weight: 700
+}
+
+.devsite-code-highlight.prettyprint>span {
+    opacity: .54
+}
+/*meow*/
+
+table pre {
+    background: rgba(255,255,255,.95)
+}
+
+td>pre:only-child {
+    padding: 0
+}
+
+body:not(.devsite-dark-code) td>pre:only-child {
+    background: 0
+}
+
+h1 code,h2 code,h3 code,h4 code,h5 code,h6 code {
+    background: 0;
+    color: #212121;
+    padding: 0
+}
+
+h1 code {
+    color: #757575
+}
+
+#embedded-explorer .com-google-api-explorer-client-Resources-Css-jsonString,pre .com {
+    color: #d81b60
+}
+
+.devsite-dark-code pre .com {
+    color: #f06292
+}
+
+#embedded-explorer .com-google-api-explorer-client-Resources-Css-jsonNumber,pre .lit,pre .dec {
+    color: #c53929
+}
+
+.devsite-dark-code pre .lit,.devsite-dark-code pre .dec {
+    color: #fbc02d
+}
+
+pre .kwd,pre .tag {
+    color: #3b78e7
+}
+
+.devsite-dark-code pre .kwd,.devsite-dark-code pre .tag {
+    color: #4dd0e1
+}
+
+#embedded-explorer .com-google-api-explorer-client-Resources-Css-jsonBoolean,pre .str,pre .atv {
+    color: #0d904f
+}
+
+.devsite-dark-code pre .str,.devsite-dark-code pre .atv {
+    color: #9ccc65
+}
+
+#embedded-explorer .com-google-api-explorer-client-Resources-Css-jsonKey,pre .typ,pre .atn {
+    color: #9c27b0
+}
+
+.devsite-dark-code pre .typ,.devsite-dark-code pre .atn {
+    color: #ce93d8
+}
+
+a code,td a code {
+    color: #039be5
+}
+
+a .atv,a .atn,a .com,a .dec,a .kwd,a .lit,a .str,a .tag,a .typ,.prettyprint :not(.devsite-github-link)>a:not(.devsite-github-link) {
+    color: #039be5;
+    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: auto;
+    font-weight: 700
+}
+
+.devsite-dark-code a .atv,.devsite-dark-code a .atn,.devsite-dark-code a .com,.devsite-dark-code a .dec,.devsite-dark-code a .kwd,.devsite-dark-code a .lit,.devsite-dark-code a .str,.devsite-dark-code a .tag,.devsite-dark-code a .typ,.devsite-dark-code .prettyprint :not(.devsite-github-link)>a:not(.devsite-github-link) {
+    color: #29b6f6
+}
+
+a:hover .atv,a:hover .atn,a:hover .com,a:hover .dec,a:hover .kwd,a:hover .lit,a:hover .str,a:hover .tag,a:hover .typ,.prettyprint a:hover {
+    text-decoration: underline
+}
+
+var,var code,var span,.prettyprint var span {
+    color: #ec407a;
+    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: auto;
+    font-weight: 700
+}
+
