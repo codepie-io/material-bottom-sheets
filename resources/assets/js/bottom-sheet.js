@@ -27,10 +27,6 @@
       this.startY_ = 0;
       this.currentY_ = 0;
       this.touchingBSheet_ = false;
-      this.currentXUp_ = 0;
-      this.currentYUp_ = 0;
-      this.startTime_ = 0;
-      this.endTime_ = 0;
       this.init_(config);
     };
 
@@ -64,18 +60,16 @@
         this.config = $.extend({}, this.Default, config);
         this.$bSheetSurface_ = this.$bsheet_.find('.' + this.Classes_.BSHEET_SURFACE);
         this.$bSheetShadow_ = this.$bsheet_.find('.' + this.Classes_.SHADOW);
-        this.boundIgnoreClicks_ = this.ignoreClick_.bind(this);
         this.boundHideBSheet_ = this.hide.bind(this);
         this.boundOnTransitionEnd_ = this.onTransitionEnd_.bind(this);
         this.update_ = this.update_.bind(this);
-        //TODO bottom sheet this line
-        this.$bSheetSurface_.on('click', this.boundIgnoreClicks_);
         this.$bSheetShadow_.on('click', this.boundHideBSheet_);
         this.bSheetHeight_ = Math.min(this.$bSheetSurface_.height(), $(window).height());
-        this.setBSheetClass_();
         this.setTouchFeature_();
         (this.config.show && config !== 'string') ? this.show() : '';
-        this.setBodyClass_()
+        this.setBSheetClass_();
+        this.setBodyClass_();
+        this.setDismissAction_();
       }
     };
 
@@ -111,17 +105,22 @@
     };
     MaterialBottomSheet.prototype['toggle'] = MaterialBottomSheet.prototype.toggle;
 
-    MaterialBottomSheet.prototype.setBodyClass_ = function () {
-      var $body = $('body');
+    MaterialBottomSheet.prototype.setBSheetClass_ = function () {
       if (this.config.persistent) {
           this.$bsheet_.addClass(this.Classes_.PERSISTENT);
-          $body.addClass(this.Classes_.BODY_PERSISTENT);
       }
       if (this.config.fullHeight) {
           this.$bsheet_.addClass(this.Classes_.FULL_HEIGHT);
       }
       if (this.config.fullWidth) {
           this.$bsheet_.addClass(this.Classes_.FULL_WIDTH);
+      }
+    };
+
+    MaterialBottomSheet.prototype.setBodyClass_ = function () {
+      var $body = $('body');
+      if (this.config.persistent) {
+          $body.addClass(this.Classes_.BODY_PERSISTENT);
       }
     };
 
@@ -137,8 +136,12 @@
       }
     };
 
-    MaterialBottomSheet.prototype.ignoreClick_ = function (e) {
-      e.stopPropagation();
+    MaterialBottomSheet.prototype.setDismissAction_ = function(){
+      var dismissButton = this.$bsheet_.find('[data-dismiss="bhseet"]');
+      if(!dismissButton.length){
+        return ;
+      }
+      dismissButton.on('click', this.boundHideBSheet_);
     };
 
     MaterialBottomSheet.prototype.onTouchStart_ = function (e) {
@@ -209,13 +212,6 @@
       }
       this.$bSheetSurface_.css('transform', 'translateY(' + -translateY + 'px');
       this.$bSheetShadow_.css('opacity', opacityPercentage);
-    };
-
-    MaterialBottomSheet.prototype.setBSheetClass_ = function() {
-      if(this.config.permanent) {
-        this.$bsheet_.addClass(this.Classes_.PERMANENT);
-        $('body').addClass(this.Classes_.BODY_PERMANENT);
-      }
     };
 
     MaterialBottomSheet.Plugin_ = function Plugin_(config) {

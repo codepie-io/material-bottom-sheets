@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <title>Drawer | Material Design | CodeArtisan</title>
+    <title>Bottom Sheets | Material Design | CodeArtisan</title>
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
 
@@ -26,7 +26,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Material+Icons' rel='stylesheet' type='text/css'>
     <link href="css/app.css" rel="stylesheet">
-    <link href="css/bottom-sheets.css" rel="stylesheet">
+    <link href="css/bottom-sheet.css" rel="stylesheet">
     <link href="css/docs.css" rel="stylesheet">
     <link href="vendor/highlight/styles/vs.css" rel="stylesheet">
 </head>
@@ -44,12 +44,15 @@
 <button class="md-button md-button--primary layout-m-t-2 md-button--raised" data-toggle="bottom-sheet" data-target="#bsheet-1">
     show sheets
 </button>
-<section class="md-bottom-sheet" data-touch="true" data-full-width="true" data-persistent="true" id="bsheet-1">
+<section class="md-bottom-sheet" data-touch="true" data-full-width="false" data-full-height="true" data-persistent="false" id="bsheet-1">
     <div class="md-bottom-sheet__shadow"></div>
     <div class="md-bottom-sheet__surface">
         <div class="md-bottom-sheet-header md-bottom-sheet-header--grid">
             Create
         </div>
+        <button class="md-button" data-dismiss="bhseet">
+            X
+        </button>
         <div class="md-bottom-sheet-grid">
             <div class="md-bottom-sheet-grid__row">
                 <div class="grid-item">
@@ -92,7 +95,6 @@
                 </div>
             </div>
         </div>
-
         <div class="hidden md-list">
             <div class="md-list__item">
                 <i class="md-list__item-icon material-icons">
@@ -103,7 +105,6 @@
                 </span>
             </div>
         </div>
-
         <div class="hidden md-bottom-sheet-header">
             Create
         </div>
@@ -129,6 +130,6 @@
     </div>
 </section>
 <script src="js/jquery.js"></script>
-<script src="../resources/assets/js/bottom-sheets.js"></script>
+<script src="js/bottom-sheet.js"></script>
 </body>
 </html>
